@@ -1,0 +1,380 @@
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+/* Header Start */
+header {
+    height: 74px;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 0px 15px 10px -15px #11111174;
+}
+header ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+header ul li {
+    display: flex;
+    align-items: center;
+}
+header ul li a {
+    margin: 0 20px;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+}
+header ul li a::before {
+    content: "";
+    background-color: #fac031;
+    width: 0;
+    height: 5px;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    transition: 0.3s;
+}
+    
+header ul li a::after {
+    content: "";
+    background-color: #fac031;
+    width: 0;
+    height: 5px;
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    transition: 0.3s;
+}
+header ul li a:hover::after{
+    width: 100%;
+}
+header ul li a:hover::before{
+    width: 100%;
+}
+
+header img {
+    height: 100%;
+}
+
+header i {
+    margin: 0 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+header i:hover {
+    color: #fac131;
+}
+
+
+@media (max-width:830px) {
+    header ul {
+        display: none;
+    }
+
+}
+
+/* Header End */
+
+/* Mega-Menu Start */
+.mobile-cart {
+    background-color: #fac131b0;
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    bottom: 3%;
+    right: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: none;
+    z-index: 1;
+}
+.mobile-cart .mega-menu {
+    position: fixed;
+    width: 100%;
+    left: -100%;
+    top: 10%;
+    transform:translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: #fac131 solid 3px;
+    border-bottom: #fac131 solid 3px;
+    padding: 0 20px;
+    font-size: 20px;
+    transition: 0.4s;
+    z-index: 1;
+    background-color: rgb(0, 0, 0);
+}
+.mobile-cart .mega-menu li  {
+    color: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 23px;
+
+}
+.mobile-cart .mega-menu li a {
+    color: rgb(255, 255, 255);
+}
+.mobile-cart .mega-menu li:not(:last-of-type){
+    border-bottom: 1px solid #7777776e;
+}
+
+.mobile-cart:hover .mega-menu{
+    left: 50%;
+}
+@media (max-width:830px){
+    .mobile-cart {
+        display: flex;
+    }
+}
+/* Mega-Menu End */
+
+/* Start Landing */
+    .landing {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: calc(100vh - 74px);
+    }
+
+    .landing img {
+        width: 500px;
+        animation: infinite up-down ease-in-out 3s; 
+    }
+    @keyframes up-down {
+        0%, 10%, 20%, 30%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40%, 60% {
+            transform: translateY(-15px);
+        }
+    }
+
+
+    
+    .text{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        width: 40%;
+    }
+    .text h1 {
+        font-size: 60px;
+    }
+    .text span{
+        color:#fac031;
+        font-family: mv boli;
+    }
+
+    .text p {
+        font-size: 20px;
+    }
+    .text button {
+        background-color: #fac031;
+        border: none;
+        width: 180px;
+        height: 50px;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .text button:hover{
+        background-color: #e0a510;
+        transform: scale(1.02);
+    }
+
+    @media (min-width:722px) and (max-width:991px){
+        .landing img {
+            width: 350px;
+        }
+        .text{
+            width: 60%;
+        }
+        .text h1 {
+            font-size: 40px;
+        }
+    
+        .text p {
+            font-size: 18px;
+        }
+    
+    }
+    @media (max-width:723px){
+        .landing img {
+            display: none;
+        }
+        .landing {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 74px);
+        }
+        .text{
+            width: 100%;
+            align-items: center;
+        }
+        .text h1 {
+            font-size: 30px;
+        }
+    
+        .text p {
+            font-size: 17px;
+        }
+    }
+/* End Landing */
+
+/* Start About */
+
+.about{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+.about h2 {
+    font-size: 30px;
+}
+.about img {
+    width: 500px;
+}
+@media (min-width:722px) and (max-width:991px){
+    .about img {
+        width: 350px;
+    }
+    
+}
+@media (max-width:723px){
+    .about img {
+        display: none;
+    }
+    .about {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+/* End About */
+
+/* Start Menu */
+.menu {
+    margin-bottom: 100px;
+}
+.menu h1 {
+    font-size: 55px;
+    width: fit-content;
+    margin: 0 auto 50px;
+}
+.menu span{
+    font-family: mv boli;
+    color: #fac031;
+    position: relative;
+}
+.menu span::before{
+    content: "";
+    position: absolute;
+    bottom: 14px;
+    width: 100%;
+    height: 2.3px;
+    background-color: #fac031;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 50px;
+}
+.card img {
+    width: 100%;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.card h3 {
+    color: #fac031;
+    font-size: 27px;
+}
+.card h4 {
+    font-size: 25px;
+}
+.card i {
+    color: #ffb700;
+}
+/* From Uiverse.io by adamgiebl */ 
+.card button {
+    border: none;
+    display: block;
+    position: relative;
+    padding: 0.5em 1.5em;
+    font-size: 18px;
+    background: transparent;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    color: black;
+    z-index: 1;
+    font-family: inherit;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.card button span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    border: 2px solid #fac031;
+}
+
+.card button span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8%;
+    height: 500%;
+    background: var(--lightgray);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-60deg);
+    transition: all 0.3s;
+}
+
+.card button:hover span::before {
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 100%;
+    background: #000000;
+}
+
+.card button:hover {
+    color: white;
+}
+
+.card button:active span::before {
+    background: #fac031;
+}
